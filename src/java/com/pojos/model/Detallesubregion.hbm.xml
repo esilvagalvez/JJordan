@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2015 4:10:55 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.model.Detallesubregion" table="detallesubregion" catalog="jordan">
+        <id name="idDetalleSubRegion" type="java.lang.Integer">
+            <column name="Id_DetalleSubRegion" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="subregiones" class="com.pojos.model.Subregiones" fetch="select">
+            <column name="Id_SubRegion" />
+        </many-to-one>
+        <many-to-one name="areas" class="com.pojos.model.Areas" fetch="select">
+            <column name="Id_Area" />
+        </many-to-one>
+        <many-to-one name="zonas" class="com.pojos.model.Zonas" fetch="select">
+            <column name="Id_Zona" />
+        </many-to-one>
+        <many-to-one name="ciudades" class="com.pojos.model.Ciudades" fetch="select">
+            <column name="Id_Ciudad" />
+        </many-to-one>
+        <set name="direccioneses" table="direcciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_DetalleSubRegion" />
+            </key>
+            <one-to-many class="com.pojos.model.Direcciones" />
+        </set>
+    </class>
+</hibernate-mapping>

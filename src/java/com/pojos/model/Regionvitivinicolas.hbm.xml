@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2015 4:10:55 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.model.Regionvitivinicolas" table="regionvitivinicolas" catalog="jordan">
+        <id name="idRegionVitinicola" type="java.lang.Integer">
+            <column name="Id_RegionVitinicola" />
+            <generator class="identity" />
+        </id>
+        <property name="regionVitinicola" type="string">
+            <column name="RegionVitinicola" length="30" />
+        </property>
+        <set name="subregioneses" table="subregiones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_RegionVitivinicola" />
+            </key>
+            <one-to-many class="com.pojos.model.Subregiones" />
+        </set>
+    </class>
+</hibernate-mapping>

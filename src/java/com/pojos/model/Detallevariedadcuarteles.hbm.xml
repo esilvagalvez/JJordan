@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2015 4:10:55 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.model.Detallevariedadcuarteles" table="detallevariedadcuarteles" catalog="jordan">
+        <composite-id name="id" class="com.pojos.model.DetallevariedadcuartelesId">
+            <key-property name="idDetalleVariedad" type="int">
+                <column name="Id_DetalleVariedad" />
+            </key-property>
+            <key-property name="idDireccion" type="int">
+                <column name="Id_Direccion" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="direcciones" class="com.pojos.model.Direcciones" update="false" insert="false" fetch="select">
+            <column name="Id_Direccion" not-null="true" />
+        </many-to-one>
+        <many-to-one name="detallevariedades" class="com.pojos.model.Detallevariedades" update="false" insert="false" fetch="select">
+            <column name="Id_DetalleVariedad" not-null="true" />
+        </many-to-one>
+        <property name="cuartel" type="string">
+            <column name="Cuartel" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

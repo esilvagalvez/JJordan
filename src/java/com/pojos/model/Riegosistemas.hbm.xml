@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2015 4:10:55 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.model.Riegosistemas" table="riegosistemas" catalog="jordan">
+        <id name="idRiegoSistema" type="java.lang.Integer">
+            <column name="Id_RiegoSistema" />
+            <generator class="identity" />
+        </id>
+        <property name="riegoSistema" type="string">
+            <column name="RiegoSistema" length="20" />
+        </property>
+        <set name="detallevariedadeses" table="detallevariedades" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_RiegoSistema" />
+            </key>
+            <one-to-many class="com.pojos.model.Detallevariedades" />
+        </set>
+    </class>
+</hibernate-mapping>

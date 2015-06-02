@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2015 4:10:55 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.model.Direcciones" table="direcciones" catalog="jordan">
+        <id name="idDireccion" type="java.lang.Integer">
+            <column name="Id_Direccion" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="detallesubregion" class="com.pojos.model.Detallesubregion" fetch="select">
+            <column name="Id_DetalleSubRegion" />
+        </many-to-one>
+        <property name="dirRol" type="string">
+            <column name="Dir_Rol" length="15" />
+        </property>
+        <property name="dirTelefono1" type="java.lang.Integer">
+            <column name="Dir_Telefono1" />
+        </property>
+        <property name="dirTelefono2" type="java.lang.Integer">
+            <column name="Dir_Telefono2" />
+        </property>
+        <property name="dirNombre" type="string">
+            <column name="Dir_Nombre" length="30" />
+        </property>
+        <property name="dirTamanoHectariaTotal" type="java.lang.Float">
+            <column name="Dir_TamanoHectariaTotal" precision="12" scale="0" />
+        </property>
+        <set name="detallevariedadcuarteleses" table="detallevariedadcuarteles" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_Direccion" not-null="true" />
+            </key>
+            <one-to-many class="com.pojos.model.Detallevariedadcuarteles" />
+        </set>
+        <set name="entidadrazondireccioneses" table="entidadrazondirecciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_Direccion" not-null="true" />
+            </key>
+            <one-to-many class="com.pojos.model.Entidadrazondirecciones" />
+        </set>
+    </class>
+</hibernate-mapping>

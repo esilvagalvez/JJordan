@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2015 4:10:55 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.model.Razonsociales" table="razonsociales" catalog="jordan">
+        <id name="idRazonSocial" type="int">
+            <column name="Id_RazonSocial" />
+            <generator class="assigned" />
+        </id>
+        <property name="razNombre" type="string">
+            <column name="Raz_Nombre" length="30" />
+        </property>
+        <set name="entidadrazondireccioneses" table="entidadrazondirecciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_RazonSocial" not-null="true" />
+            </key>
+            <one-to-many class="com.pojos.model.Entidadrazondirecciones" />
+        </set>
+    </class>
+</hibernate-mapping>

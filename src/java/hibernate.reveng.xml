@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="jordan"/>
+  <table-filter match-name="tipovariedad"/>
+  <table-filter match-name="personaentidades"/>
+  <table-filter match-name="zonas"/>
+  <table-filter match-name="bancos"/>
+  <table-filter match-name="detallevariedades"/>
+  <table-filter match-name="personas"/>
+  <table-filter match-name="conduccionsistemas"/>
+  <table-filter match-name="razonsociales"/>
+  <table-filter match-name="entidadrazondirecciones"/>
+  <table-filter match-name="riegosistemas"/>
+  <table-filter match-name="detallesubregion"/>
+  <table-filter match-name="giros"/>
+  <table-filter match-name="areas"/>
+  <table-filter match-name="direcciones"/>
+  <table-filter match-name="variedades"/>
+  <table-filter match-name="ciudades"/>
+  <table-filter match-name="bancoentidades"/>
+  <table-filter match-name="subregiones"/>
+  <table-filter match-name="entidades"/>
+  <table-filter match-name="regionvitivinicolas"/>
+  <table-filter match-name="detallevariedadcuarteles"/>
+  <table-filter match-name="tipousuarios"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2015 4:10:55 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.model.Entidades" table="entidades" catalog="jordan">
+        <id name="idEntidad" type="string">
+            <column name="Id_Entidad" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="entRut" type="string">
+            <column name="Ent_Rut" length="10" />
+        </property>
+        <set name="bancoentidadeses" table="bancoentidades" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_Entidad" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.pojos.model.Bancoentidades" />
+        </set>
+        <set name="entidadrazondireccioneses" table="entidadrazondirecciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_Entidad" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.pojos.model.Entidadrazondirecciones" />
+        </set>
+        <set name="personaentidadeses" table="personaentidades" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_Entidad" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.pojos.model.Personaentidades" />
+        </set>
+    </class>
+</hibernate-mapping>

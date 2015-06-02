@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 28, 2015 4:10:55 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.model.Detallevariedades" table="detallevariedades" catalog="jordan">
+        <id name="idDetalleVariedad" type="java.lang.Integer">
+            <column name="Id_DetalleVariedad" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="conduccionsistemas" class="com.pojos.model.Conduccionsistemas" fetch="select">
+            <column name="Id_ConduccionSistema" />
+        </many-to-one>
+        <many-to-one name="riegosistemas" class="com.pojos.model.Riegosistemas" fetch="select">
+            <column name="Id_RiegoSistema" />
+        </many-to-one>
+        <many-to-one name="variedades" class="com.pojos.model.Variedades" fetch="select">
+            <column name="Id_Variedad" />
+        </many-to-one>
+        <property name="cantidadPlantas" type="java.lang.Integer">
+            <column name="CantidadPlantas" />
+        </property>
+        <property name="tamanioHectariaVariedad" type="java.lang.Float">
+            <column name="TamanioHectariaVariedad" precision="12" scale="0" />
+        </property>
+        <property name="anio" type="java.lang.Integer">
+            <column name="Anio" />
+        </property>
+        <set name="detallevariedadcuarteleses" table="detallevariedadcuarteles" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_DetalleVariedad" not-null="true" />
+            </key>
+            <one-to-many class="com.pojos.model.Detallevariedadcuarteles" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/jordan?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="com/pojos/model/Riegosistemas.hbm.xml"/>
+    <mapping resource="com/pojos/model/Subregiones.hbm.xml"/>
+    <mapping resource="com/pojos/model/Tipovariedad.hbm.xml"/>
+    <mapping resource="com/pojos/model/Tipousuarios.hbm.xml"/>
+    <mapping resource="com/pojos/model/Entidadrazondirecciones.hbm.xml"/>
+    <mapping resource="com/pojos/model/Variedades.hbm.xml"/>
+    <mapping resource="com/pojos/model/Giros.hbm.xml"/>
+    <mapping resource="com/pojos/model/Personas.hbm.xml"/>
+    <mapping resource="com/pojos/model/Razonsociales.hbm.xml"/>
+    <mapping resource="com/pojos/model/Bancos.hbm.xml"/>
+    <mapping resource="com/pojos/model/Entidades.hbm.xml"/>
+    <mapping resource="com/pojos/model/Direcciones.hbm.xml"/>
+    <mapping resource="com/pojos/model/Zonas.hbm.xml"/>
+    <mapping resource="com/pojos/model/Detallevariedadcuarteles.hbm.xml"/>
+    <mapping resource="com/pojos/model/Detallevariedades.hbm.xml"/>
+    <mapping resource="com/pojos/model/Regionvitivinicolas.hbm.xml"/>
+    <mapping resource="com/pojos/model/Conduccionsistemas.hbm.xml"/>
+    <mapping resource="com/pojos/model/Areas.hbm.xml"/>
+    <mapping resource="com/pojos/model/Ciudades.hbm.xml"/>
+    <mapping resource="com/pojos/model/Personaentidades.hbm.xml"/>
+    <mapping resource="com/pojos/model/Bancoentidades.hbm.xml"/>
+    <mapping resource="com/pojos/model/Detallesubregion.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
