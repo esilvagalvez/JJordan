@@ -1,7 +1,9 @@
+/*
+Proyecto de prueba 
+Se desarrollara en otra herramienta de desarrollo
+*/
+
 package com.dao.model;
-
-
-
 import com.pojos.model.Ciudades;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -16,6 +18,7 @@ private void iniciar() throws HibernateException{
         session=HibernateUtil.getSessionFactory().openSession();
         tran=session.beginTransaction();
     }
+     
 public List<Ciudades> listaCiudades() throws HibernateException{
         List<Ciudades> lista = null;
         try{
@@ -26,7 +29,8 @@ public List<Ciudades> listaCiudades() throws HibernateException{
             session.close();
         }
          return lista;
-    }   
+    } 
+     
 public void MetodoGrabarCiudades(Ciudades objCiudades)throws  HibernateException{
     try{
         iniciar();
@@ -40,6 +44,7 @@ public void MetodoGrabarCiudades(Ciudades objCiudades)throws  HibernateException
         session.close();
     }
   } 
+     
 public void MetodoEliminarBancos(Ciudades objetoCiudades) throws  HibernateException{
     try{
         iniciar();
@@ -53,6 +58,7 @@ public void MetodoEliminarBancos(Ciudades objetoCiudades) throws  HibernateExcep
         session.close();
     }
   }
+     
 public void MetodoActualizarBancos(Ciudades objetoCiudades)throws  HibernateException{
     try{
         iniciar();
